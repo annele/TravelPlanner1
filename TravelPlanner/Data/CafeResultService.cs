@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using TravelPlanner.Utils;
 using System.Collections.ObjectModel;
 
-namespace TravelPlanner
+namespace TravelPlanner.Data
 {
     public class CafeResultService
     {

@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="config.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentSharp.HtmlAgilityPack" Version="5.5.172" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
 </Project>

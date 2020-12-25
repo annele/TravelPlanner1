@@ -9,7 +9,7 @@ using System.Configuration;
 using System.IO;
 using System.Collections.ObjectModel;
 
-namespace TravelPlanner
+namespace TravelPlanner.Data
 {
     public class WeatherREsultService
 
