@@ -29,7 +29,7 @@ namespace TravelPlanner
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
-            services.AddSingleton<WeatherREsultService>();
+            services.AddSingleton<WeatherResultService>();
             services.AddSingleton<CafeResultService>();
         }
 

@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 
 namespace TravelPlanner.Data
 {
-    public class WeatherREsultService
+    public class WeatherResultService
 
     {
 
@@ -22,12 +22,12 @@ namespace TravelPlanner.Data
         private String getApiKey()
         {
 
-            string filePath = @"..\..\config.txt";
+            string filePath = @"config.txt";
             string weatherApikey = "";
 
             if (File.Exists(filePath))
             {
-                string configs = System.IO.File.ReadAllText(filePath);
+                string configs = File.ReadAllText(filePath);
                 weatherApikey = configs.Split('=')[1];
 
             }

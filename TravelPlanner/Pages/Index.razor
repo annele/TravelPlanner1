@@ -1,13 +1,26 @@
 ﻿@page "/"
-    <div class="hello">
-        <h1>Welcome to Travel Planner App</h1>
-        <p>
-            <h3>Please enter the desired  travel destination</h3>
-        </p>
-    </div>
 
-    <div class="locationInput">
-        <input id="locationName" type="text">
-        <button type="button"> Search </button>
+@using TravelPlanner.Data
+@inject WeatherResultService weatherResultService
 
-    </div>
+<div class="hello">
+    <h1>Welcome to Travel Planner App</h1>
+    <p>
+        <h3>Please enter the desired  travel destination</h3>
+    </p>
+</div>
+
+<div class="locationInput">
+    <input id="locationName" type="text" @bind="citySearch">
+    <button type="submit" @onclick="SearchLocation"> Search </button>
+
+</div>
+
+
+<div class="locationsList">
+   <ul>
+       <li>
+
+       </li>
+   </ul>
+</div>

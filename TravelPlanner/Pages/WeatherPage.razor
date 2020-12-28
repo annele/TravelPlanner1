@@ -1,12 +1,28 @@
-﻿<h3>Weather for ...</h3>
+﻿@page "/weather"
+
+<h3>Weather for ...</h3>
 
 
 <div class="weather">
-    <ul>
-        <li>Date</li>
-        <li>WEather Summarz</li>
-        <li>Day temperature</li>
-        <li>Night temperature</li>
-
-    </ul>
+    <table class="weatherTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temperature Day</th>
+                <th>Temperature Night</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            {
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
