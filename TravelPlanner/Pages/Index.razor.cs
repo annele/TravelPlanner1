@@ -32,6 +32,9 @@ namespace TravelPlanner.Pages
                 CityResults.Add(res);
         }
 
-
+        public void UsersChoice ()
+        {
+            
+        }
     }
 }

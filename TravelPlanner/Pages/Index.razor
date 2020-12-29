@@ -1,7 +1,7 @@
 ﻿@page "/"
 
 @using TravelPlanner.Data
-@inject WeatherResultService weatherResultService
+
 
 <div class="hello">
     <h1>Welcome to Travel Planner App</h1>
@@ -13,14 +13,15 @@
 <div class="locationInput">
     <input id="locationName" type="text" @bind="citySearch">
     <button type="submit" @onclick="SearchLocation"> Search </button>
-
 </div>
-
+<br />
 
 <div class="locationsList">
-   <ul>
-       <li>
-
-       </li>
-   </ul>
+    @foreach(var cityresult in CityResults){
+    <ul>
+        <li>
+            <a href="/index/infochoice" @onclick="UsersChoice"> @cityresult</a>   
+        </li>
+    </ul>
+    }
 </div>
