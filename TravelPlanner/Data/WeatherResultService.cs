@@ -45,7 +45,7 @@ namespace TravelPlanner.Data
         /// <param name="cityname"></param>
         /// <returns></returns>
 
-        public ObservableCollection<CityResult> GetLocations(string cityname)
+        public ObservableCollection<CityResult> GetCityResults(string cityname)
         {
 
             WebClient w = new WebClient();

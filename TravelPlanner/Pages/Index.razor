@@ -1,5 +1,5 @@
 ﻿@page "/"
-
+@inject LocationInformationService locationInformationService
 @using TravelPlanner.Data
 
 
@@ -7,6 +7,7 @@
     <h1>Welcome to Travel Planner App</h1>
     <p>
         <h3>Please enter the desired  travel destination</h3>
+        <SurveyPrompt Title="Hello testtitle"></SurveyPrompt>
     </p>
 </div>
 
@@ -20,7 +21,7 @@
     @foreach(var cityresult in CityResults){
     <ul>
         <li>
-            <a href="/index/infochoice" @onclick="UsersChoice"> @cityresult</a>   
+            <a href="/infochoice/@cityresult.ID" @onclick="@(e => UsersChoice(cityresult))" > @cityresult</a>   
         </li>
     </ul>
     }

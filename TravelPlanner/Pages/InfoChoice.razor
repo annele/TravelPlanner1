@@ -1,22 +1,33 @@
-﻿@page "/index/infochoice"
-
+﻿@page "/infochoice/{LocationID:int}"
+@inject Data.LocationInformationService locationInformationService 
 <h3>
 </h3>
 
 <div class="infochoice">
     <p>
-        <a href="/index/infochoice/weather">Weather</a>
+        <button></button>
+    </p>
+</div>
+<div>
+    <p>
+        <WeatherPage></WeatherPage>
     </p>
 </div>
 
 
 <div class="infochoice">
     <p>
-        <a href="/index/infochoice/cafe">Cafe List</a>
+        <a href="/infochoice/cafe/">Cafe List</a>
     </p>
 </div>
 
 @code {
+    [Parameter]
+    public int LocationID { get; set; } = 0;
 
+    protected override void OnInitialized()
+    {
+        var test = locationInformationService.GetByID(LocationID);
+    }
 
 }
