@@ -1,51 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace TravelPlanner.Data
 {
     public class LocationInformationService
-
     {
-        public  List<LocationInformation> _locationInformations = new List<LocationInformation>();
+        public List<LocationInformation> _locationInformations = new List<LocationInformation>();
 
 
         //load(string filename)
         //loads from file to _locationInformations
 
-        public LocationInformationService Load(string filename)
+        public List<LocationInformation> Load(string path)
         {
-           /* var li = new LocationInformationService {_locationInformations = new List<LocationInformation>() };
-            var writer = new System.Xml.Serialization.XmlSerializer(typeof(LocationInformationService));
-            var wfile = new System.IO.StreamWriter(@"locationInformation.xml");
-            writer.Serialize(wfile, li);
-            wfile.Close();*/
-
-            System.Xml.Serialization.XmlSerializer reader =
-        new System.Xml.Serialization.XmlSerializer(typeof(LocationInformationService));
-            System.IO.StreamReader file = new System.IO.StreamReader(
-                @"locationInformation.xml");
-            LocationInformationService locationInformation = (LocationInformationService)reader.Deserialize(file);
+            path = @"locationInformation.xml";
+            XmlSerializer reader = new XmlSerializer(typeof(List<LocationInformation>));
+            StreamReader file = new StreamReader(path);
+            var locinfo = reader.Deserialize(file) as List<LocationInformation>;
             file.Close();
-            return locationInformation;
+            return locinfo;
         }
 
         //save() 
         //saves __locationInformations to file
-        public void Save()
-
+        public void Save(string path)
         {
-            LocationInformationService locationInformation = new LocationInformationService();
-
-            locationInformation._locationInformations = new List<LocationInformation>();
-            
-            System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(LocationInformationService));
-
-            var path = @"locationInformation.xml";
-            System.IO.FileStream file = System.IO.File.Create(path);
-
-            writer.Serialize(file, locationInformation);
+            XmlSerializer writer = new XmlSerializer(typeof(List<LocationInformation>));
+            path = @"locationInformation.xml";
+            FileStream file = File.Create(path);
+            writer.Serialize(file, _locationInformations);
             file.Close();
         }
 
@@ -57,7 +44,17 @@ namespace TravelPlanner.Data
 
         public LocationInformation GetByID(int id)
         {
-            var result = _locationInformations.Find(l => l.ID == id);
+            // var result = _locationInformations.Find(l => l.ID == id);
+            var locInfo = Load(@"locationInformation.xml");
+            var result = locInfo.Find(l => l.ID == id);
+            if (!result.Equals(null))
+            {
+
+            }
+            else
+            {
+                return result;
+            }
 
 
             //if not found => get from api
@@ -66,13 +63,6 @@ namespace TravelPlanner.Data
 
             return result;
         }
-
-
-        public LocationInformationService()
-        {
-
-        }
-
 
     }
 }
