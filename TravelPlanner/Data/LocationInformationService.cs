@@ -77,7 +77,7 @@ namespace TravelPlanner.Data
             // save to __locationInformations
             //save xml
 
-            return result;
+            //return result;
         }
 
     }
