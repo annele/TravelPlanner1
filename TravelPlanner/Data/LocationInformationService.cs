@@ -49,6 +49,22 @@ namespace TravelPlanner.Data
             var result = locInfo.Find(l => l.ID == id);
             if (!result.Equals(null))
             {
+                var weather = new WeatherResultService();
+                var cafe = new CafeResultService();
+                var city = new CityResult();
+                result = new LocationInformation();
+
+                var locWeather = weather.GetWeatherFor5Days(id);
+                var locCafe = cafe.GetCafeResult(city);
+
+                result.WeatherResult = locWeather;
+                result.CafeResult = locCafe;
+                result.ID = id;
+
+                _locationInformations.Add(result);
+                Save(@"locationInformation.xml");
+
+                return result;
 
             }
             else
