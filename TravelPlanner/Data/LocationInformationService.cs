@@ -15,23 +15,33 @@ namespace TravelPlanner.Data
         //load(string filename)
         //loads from file to _locationInformations
 
-        public List<LocationInformation> Load(string path)
+        public List<LocationInformation> Load(string filename)
         {
-            path = @"locationInformation.xml";
-            XmlSerializer reader = new XmlSerializer(typeof(List<LocationInformation>));
-            StreamReader file = new StreamReader(path);
-            var locinfo = reader.Deserialize(file) as List<LocationInformation>;
-            file.Close();
-            return locinfo;
+          //  path = @"locationInformation.xml";
+          if(File.Exists(filename))
+            {
+                XmlSerializer reader = new XmlSerializer(typeof(List<LocationInformation>));
+                StreamReader file = new StreamReader(filename);
+
+
+                var locinfo = reader.Deserialize(file) as List<LocationInformation>;
+                file.Close();
+                return locinfo;
+            } 
+          else
+            {
+                return new List<LocationInformation>();
+            }
+          
         }
 
         //save() 
         //saves __locationInformations to file
-        public void Save(string path)
+        public void Save(string filename)
         {
             XmlSerializer writer = new XmlSerializer(typeof(List<LocationInformation>));
-            path = @"locationInformation.xml";
-            FileStream file = File.Create(path);
+          //  path = @"locationInformation.xml";
+            FileStream file = File.Create(filename);
             writer.Serialize(file, _locationInformations);
             file.Close();
         }
@@ -44,10 +54,13 @@ namespace TravelPlanner.Data
 
         public LocationInformation GetByID(int id)
         {
-            // var result = _locationInformations.Find(l => l.ID == id);
-            var locInfo = Load(@"locationInformation.xml");
-            var result = locInfo.Find(l => l.ID == id);
-            if (!result.Equals(null))
+            _locationInformations = Load(@"locationInformation.xml");
+            var result = _locationInformations.Find(l => l.ID == id);
+
+            //var result = new List<LocationInformation>();
+            //  result = locInfo.Find(l => l.ID == id);
+            //   var result = locInfo.Find(l => l.ID == id);
+            if (result == null)
             {
                 var weather = new WeatherResultService();
                 var cafe = new CafeResultService();

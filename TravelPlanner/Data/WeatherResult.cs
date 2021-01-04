@@ -74,6 +74,12 @@ namespace TravelPlanner.Data
             _tempNight = tempNight;
         }
 
+
+        public WeatherResult()
+        {
+
+        }
+
     }
 
 }
