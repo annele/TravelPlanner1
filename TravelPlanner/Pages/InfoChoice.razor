@@ -1,11 +1,12 @@
 ﻿@page "/infochoice/{LocationID:int}"
-@inject Data.LocationInformationService locationInformationService 
+@inject Data.LocationInformationService locationInformationService
+@inject Data.WeatherResultService weatherResultServise
 <h3>
 </h3>
 
 <div class="infochoice">
     <p>
-        <button></button>
+        <button type="submit">Weather</button>
     </p>
 </div>
 <div>
@@ -17,6 +18,7 @@
 
 <div class="infochoice">
     <p>
+        <button type="submit">Cafe List</button>
         <a href="/infochoice/cafe/">Cafe List</a>
     </p>
 </div>
@@ -34,8 +36,6 @@
     protected override void OnInitialized()
     {
         var test = locationInformationService.GetByID(LocationID);
-        
-
 
     }
 

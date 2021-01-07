@@ -9,80 +9,50 @@ namespace TravelPlanner.Data
 {
     public class LocationInformationService
     {
+        public CafeResultService cafeResultService = new CafeResultService();
+        public WeatherResultService weatherResultService = new WeatherResultService();
+        public CityResultService cityResultService = new CityResultService();
+        public CityResult cityResult = new CityResult();
+
         public List<LocationInformation> _locationInformations = new List<LocationInformation>();
 
-
-        //load(string filename)
-        //loads from file to _locationInformations
-
-        public List<LocationInformation> Load(string filename)
+        public LocationInformationService()
         {
-          //  path = @"locationInformation.xml";
-          if(File.Exists(filename))
-            {
-                XmlSerializer reader = new XmlSerializer(typeof(List<LocationInformation>));
-                StreamReader file = new StreamReader(filename);
-
-
-                var locinfo = reader.Deserialize(file) as List<LocationInformation>;
-                file.Close();
-                return locinfo;
-            } 
-          else
-            {
-                return new List<LocationInformation>();
-            }
-          
+            _locationInformations = Utils.XML.Load<List<LocationInformation>>(@"locationInformation.xml");
         }
-
-        //save() 
-        //saves __locationInformations to file
-        public void Save(string filename)
-        {
-            XmlSerializer writer = new XmlSerializer(typeof(List<LocationInformation>));
-          //  path = @"locationInformation.xml";
-            FileStream file = File.Create(filename);
-            writer.Serialize(file, _locationInformations);
-            file.Close();
-        }
-
 
         public void Add(LocationInformation locationInformation)
         {
             _locationInformations.Add(locationInformation);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public LocationInformation GetByID(int id)
         {
-            _locationInformations = Load(@"locationInformation.xml");
-            var result = _locationInformations.Find(l => l.ID == id);
+            var currentLocationInformation = _locationInformations.Find(l => l.ID == id);
 
-            //var result = new List<LocationInformation>();
-            //  result = locInfo.Find(l => l.ID == id);
-            //   var result = locInfo.Find(l => l.ID == id);
-            if (result == null)
+            if (currentLocationInformation == null)
             {
-                var weather = new WeatherResultService();
-                var cafe = new CafeResultService();
-                var city = new CityResult();
-                result = new LocationInformation();
+                var locationWeather = weatherResultService.GetWeatherFor5Days(id);
+                var locationCity = cityResultService.GetById(id);//new CityResult(); // from cityresult storage, or from accuweather api above              
+                var locationCafe = cafeResultService.GetCafeResult(locationCity);
 
-                var locWeather = weather.GetWeatherFor5Days(id);
-                var locCafe = cafe.GetCafeResult(city);
+                currentLocationInformation.CafeResult = locationCafe;
+                currentLocationInformation.WeatherResult = locationWeather;
+                currentLocationInformation.ID = id;
 
-                result.WeatherResult = locWeather;
-                result.CafeResult = locCafe;
-                result.ID = id;
+                _locationInformations.Add(currentLocationInformation);
+                Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
 
-                _locationInformations.Add(result);
-                Save(@"locationInformation.xml");
-
-                return result;
-
+                return currentLocationInformation;
             }
             else
             {
-                return result;
+                return currentLocationInformation;
             }
 
 

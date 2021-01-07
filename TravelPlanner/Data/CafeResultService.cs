@@ -31,7 +31,7 @@ namespace TravelPlanner.Data
         public ObservableCollection<CafeResult> GetCafeResult(CityResult cityResult)
         {
             var cafeResult = new ObservableCollection<CafeResult>();
-            var testURL = getUrl(cityResult);
+            var theForkURL = getUrl(cityResult);
 
             // var testURL = getUrl(new CityResult() { Latitude = "48.220778", Longitude = "16.3100205" });
             var wc = new GZipWebClient();
@@ -39,13 +39,12 @@ namespace TravelPlanner.Data
             wc.Headers.Add("Accept-Language", "en-US,en;q=0.9");
             wc.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
             wc.Headers.Add("Accept-Encoding", "gzip");
-            var test = wc.DownloadString(testURL);
+            var test = wc.DownloadString(theForkURL);
 
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(test);
 
             string typeXpath = "//span[@class = 'enrzupw0 css-1ujxl3z ejesmtr0']";
-            // string nameXpath = "//a[@class = 'css-1lxw1q9 ejesmtr0']";
             string nameXpath = "//div[@class = 'css-aycukd e6vs4hd0']/div/h2/a";
             string addressExpath = "//p[@class = 'css-axj1nn ejesmtr0']";
             string avPriceXpath = "//p[@class = 'css-a7e1wa ejesmtr0']/span[2]";

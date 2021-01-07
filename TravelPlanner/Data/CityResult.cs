@@ -11,12 +11,15 @@ namespace TravelPlanner
 
         private int _id;
         private string _description;
-
+        private string _city;
+        private string _country;
+        private string _administrativeArea;
         private string _latitude;
         private string _longitude;
 
-        public string Longitude { 
-        
+        public string Longitude
+        {
+
             get { return _longitude; }
             set { value = _latitude; }
         }
@@ -34,20 +37,39 @@ namespace TravelPlanner
             set { _id = value; }
         }
 
-        public string Description
+        public string City
         {
-            get { return _description; }
-            set { _description = value; }
+            get { return _city; }
+            set { _city = value; }
         }
 
-        public CityResult (int id, string description, string longitude, string latitude)
+        public string County
         {
-            this._id = id;
-            this._description = description;
-            this._latitude = latitude;
-            this._longitude = longitude;
+            get { return _country; }
+            set { _country = value; }
         }
-        public CityResult ()
+
+        public string AdministrativeArea
+        {
+            get { return _administrativeArea; }
+            set { _administrativeArea = value; }
+        }
+        public string Description
+        {
+            get { return _city + ", " + _country + ", " + _administrativeArea; }
+        }
+
+        public CityResult(int id, string city, string country, string administrativeArea, string description, string longitude, string latitude)
+        {
+            _id = id;
+            _city = city;
+            _country = country;
+            _administrativeArea = administrativeArea;
+            _description = description;
+            _latitude = latitude;
+            _longitude = longitude;
+        }
+        public CityResult()
         {
 
         }

@@ -15,11 +15,12 @@ namespace TravelPlanner.Data
 
     {
 
+
         /// <summary>
         /// getting APIKEY from config file
         /// </summary>
         /// <returns></returns>
-        private String getApiKey()
+      /*   private String getAccuWeatherAPIKey()  //put in utilities 
         {
 
             string filePath = @"config.txt";
@@ -29,11 +30,9 @@ namespace TravelPlanner.Data
             {
                 string configs = File.ReadAllText(filePath);
                 weatherApikey = configs.Split('=')[1];
-
             }
             else
             {
-
                 return null;
             }
             return weatherApikey;
@@ -44,14 +43,20 @@ namespace TravelPlanner.Data
         /// </summary>
         /// <param name="cityname"></param>
         /// <returns></returns>
-
-        public ObservableCollection<CityResult> GetCityResults(string cityname)
+       public ObservableCollection<CityResult> GetCityResults(string cityname)  // move this function to new CityResultService
         {
+
+            var result = _cityResults.Find(c => c.CityName == cityname);
+            if (result == null)
+            {
+
+            }
+
 
             WebClient w = new WebClient();
             var locationsList = new ObservableCollection<CityResult>();
 
-            var weatherApikey = getApiKey();
+            var weatherApikey = getAccuWeatherAPIKey();
             if (weatherApikey == null)
             {
 
@@ -66,10 +71,8 @@ namespace TravelPlanner.Data
                 var city = o[i]["LocalizedName"].ToString();
                 var country = o[i]["Country"]["LocalizedName"].ToString();
                 var administrativeArea = o[i]["AdministrativeArea"]["LocalizedName"].ToString();
-               // var latidude = Convert.ToDouble(o[i]["GeoPosition"]["Latitude"]);
-               // var longitute = Convert.ToDouble(o[i]["GeoPosition"]["Longitude"]);
                 var latidude = (o[i]["GeoPosition"]["Latitude"]).ToString();
-                var longitute =(o[i]["GeoPosition"]["Longitude"]).ToString();
+                var longitute = (o[i]["GeoPosition"]["Longitude"]).ToString();
 
 
                 string location = city + ", " + country + ", " + administrativeArea;
@@ -78,7 +81,7 @@ namespace TravelPlanner.Data
             }
 
             return locationsList;
-        }
+        }*/
 
 
         /// <summary>
@@ -86,35 +89,35 @@ namespace TravelPlanner.Data
         /// </summary>
         /// <param name="locationkey"></param>
         /// <returns></returns>
-
         public ObservableCollection<WeatherResult> GetWeatherFor5Days(int locationkey)  // should just take in the location key 
         {
 
             var weatherList = new ObservableCollection<WeatherResult>();
 
-            var weatherApikey = getApiKey();
+            var weatherApikey = Utils.APIKey.getAccuWeatherAPIKey();
             WebClient w = new WebClient();
-     
-            var weatherData = w.DownloadString($"http://dataservice.accuweather.com/forecasts/v1/daily/5day/{locationkey}?apikey={weatherApikey}&metric=true");  
+
+            var weatherData = w.DownloadString($"http://dataservice.accuweather.com/forecasts/v1/daily/5day/{locationkey}?apikey={weatherApikey}&metric=true");
 
             JObject o = JObject.Parse(weatherData);
 
             for (int i = 0; i < o["DailyForecasts"].Count(); i++)
             {
                 var headlineText = o["Headline"]["Text"].ToString();
-                var date = Convert.ToDateTime ((o["DailyForecasts"][i]["Date"]));
+                var date = Convert.ToDateTime((o["DailyForecasts"][i]["Date"]));
                 var tempDay = Convert.ToDouble(o["DailyForecasts"][i]["Temperature"]["Maximum"]["Value"]);
                 var iconNumberDay = Convert.ToInt32(o["DailyForecasts"][i]["Day"]["Icon"]);
                 var tempNight = Convert.ToDouble(o["DailyForecasts"][i]["Temperature"]["Minimum"]["Value"]);
                 var iconNumbeNight = Convert.ToInt32(o["DailyForecasts"][i]["Night"]["Icon"]);
-               
-                weatherList.Add(new WeatherResult(headlineText, date, iconNumberDay, tempDay, iconNumbeNight,
-                    tempNight));
+
+                weatherList.Add(new WeatherResult(headlineText, date, iconNumberDay, tempDay, iconNumbeNight,tempNight));
 
             }
 
             return weatherList;
         }
+
+
 
 
 

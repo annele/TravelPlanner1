@@ -28,10 +28,10 @@ namespace TravelPlanner
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<WeatherResultService>();
             services.AddSingleton<CafeResultService>();
             services.AddSingleton<LocationInformationService>();
+            services.AddSingleton<CityResultService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

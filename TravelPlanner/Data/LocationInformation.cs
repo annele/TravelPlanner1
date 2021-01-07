@@ -8,9 +8,9 @@ namespace TravelPlanner.Data
 {
     public class LocationInformation
     {
-       public  int ID;
-       public  ObservableCollection<CafeResult> CafeResult;
-       public ObservableCollection<WeatherResult> WeatherResult;
+        public int ID;
+        public ObservableCollection<CafeResult> CafeResult;
+        public ObservableCollection<WeatherResult> WeatherResult;
 
         public LocationInformation()
         {
