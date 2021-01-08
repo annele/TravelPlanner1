@@ -16,21 +16,18 @@ namespace TravelPlanner.Data
 
         public CityResultService()
         {
-            string filename = @"cityResult.xml";
-            if(File.Exists(filename))
-            {
-                _cityResults = Utils.XML.Load<List<CityResult>>(filename);
 
-            } else
-            {
-                Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
+            _cityResults = Utils.XML.Load<List<CityResult>>(@"cityResult.xml");
+        }
 
-            }
+        public void Add(CityResult cityResult)
+        {
+            _cityResults.Add(cityResult);
         }
 
         public ObservableCollection<CityResult> GetByName(string cityname)
         {
-            
+
             WebClient w = new WebClient();
             var locationsList = new ObservableCollection<CityResult>();
 
@@ -79,7 +76,7 @@ namespace TravelPlanner.Data
             if (currentCityResult == null)
             {
                 WebClient w = new WebClient();
-                
+
                 var weatherApikey = Utils.APIKey.getAccuWeatherAPIKey();
                 if (weatherApikey == null)
                 {
@@ -102,7 +99,7 @@ namespace TravelPlanner.Data
 
                 currentCityResult = new CityResult(locationKey, city, country, administrativeArea, location, latidude, longitute);
                 _cityResults.Add(currentCityResult);
-                Utils.XML.Save <List<CityResult>>(@"cityResult.xml", _cityResults);
+                Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
                 return currentCityResult;
                 //}
             }
