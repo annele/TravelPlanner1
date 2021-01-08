@@ -37,10 +37,12 @@ namespace TravelPlanner.Data
 
             if (currentLocationInformation == null)
             {
-                var locationWeather = weatherResultService.GetWeatherFor5Days(id);
-                var locationCity = cityResultService.GetById(id);//new CityResult(); // from cityresult storage, or from accuweather api above              
-                var locationCafe = cafeResultService.GetCafeResult(locationCity);
 
+                var locationWeather = weatherResultService.GetWeatherFor5Days(id);
+                var locationCityResult = cityResultService.GetById(id);//new CityResult(); // from cityresult storage, or from accuweather api above              
+                var locationCafe = cafeResultService.GetCafeResult(locationCityResult);
+
+                currentLocationInformation = new LocationInformation();
                 currentLocationInformation.CafeResult = locationCafe;
                 currentLocationInformation.WeatherResult = locationWeather;
                 currentLocationInformation.ID = id;
