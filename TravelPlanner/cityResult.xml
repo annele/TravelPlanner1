@@ -1,2 +1,11 @@
 <?xml version="1.0"?>
-<ArrayOfCityResult xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfCityResult xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CityResult>
+    <Longitude>40.41</Longitude>
+    <Latitude>-3.686</Latitude>
+    <ID>308526</ID>
+    <City>Madrid</City>
+    <County>Spain</County>
+    <AdministrativeArea>Madrid</AdministrativeArea>
+  </CityResult>
+</ArrayOfCityResult>

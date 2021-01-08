@@ -82,9 +82,10 @@ namespace TravelPlanner.Data
                 {
 
                 }
-                var дщсфешщт = w.DownloadString($"https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/%7BlocationKey%7D");
+                var locations = w.DownloadString($"http://dataservice.accuweather.com/locations/v1/{id}?apikey={weatherApikey}");
 
-                JArray o = JArray.Parse(дщсфешщт);
+                // JArray o = JArray.Parse(locations);
+                JObject o = JObject.Parse(locations);
 
                 //for (int i = 0; i < o.Count; i++)
                 //  {
