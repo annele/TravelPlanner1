@@ -30,13 +30,13 @@ namespace TravelPlanner.Data
         /// <returns></returns>
         public ObservableCollection<CityResult> GetByName(string cityname)
         {
-           // var currentCityResult = _cityResults.Find(c => c.City = cityname);
+            var foundCityResults = _cityResults.FindAll(c => c.City == cityname);
+            ObservableCollection<CityResult> fCityResults = new ObservableCollection<CityResult>(foundCityResults);
 
-          //  if (currentCityResult == null)
-          //  {
+
+            if (foundCityResults.Count == 0)
+            {
                 WebClient w = new WebClient();
-                var locationsList = new ObservableCollection<CityResult>();
-
                 var weatherApikey = Utils.APIKey.getAccuWeatherAPIKey();
                 if (weatherApikey == null)
                 {
@@ -58,20 +58,18 @@ namespace TravelPlanner.Data
 
                     string location = city + ", " + country + ", " + administrativeArea;
 
-                    locationsList.Add(new CityResult(locationKey, city, country, administrativeArea, location, latidude, longitute));
-                 //   _cityResults.Add(locationsList);
-               //     Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
-
+                    fCityResults.Add(new CityResult(locationKey, city, country, administrativeArea, location, latidude, longitute));
+                    _cityResults.AddRange(fCityResults);
+                    Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
                 }
-                return locationsList;
-
+                return fCityResults;
             }
-         //   else
+            else
             {
-         //       return currentCityResult;
-           // }
-           
+                return fCityResults;
+            }
         }
+
 
         //implement a list of cityresult storage (like locationinformations)  (load and save XML)
 
@@ -119,7 +117,7 @@ namespace TravelPlanner.Data
                 _cityResults.Add(currentCityResult);
                 Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
                 return currentCityResult;
-                
+
             }
             else
             {

@@ -18,6 +18,7 @@ namespace TravelPlanner.Pages
             get { return citySearch; }
             set { citySearch = value; }
         }
+
         /// <summary>
         /// searches for the locations by the 
         /// </summary>

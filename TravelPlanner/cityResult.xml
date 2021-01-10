@@ -29,11 +29,18 @@
     <AdministrativeArea>Carabobo</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>39.477</Longitude>
     <Latitude>-0.374</Latitude>
     <ID>310683</ID>
     <City>Valencia</City>
     <County>Spain</County>
     <AdministrativeArea>Valencia</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>53.551</Longitude>
+    <Latitude>9.997</Latitude>
+    <ID>178556</ID>
+    <City>Hamburg</City>
+    <County>Germany</County>
+    <AdministrativeArea>Hamburg</AdministrativeArea>
   </CityResult>
 </ArrayOfCityResult>
