@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace TravelPlanner.Data
@@ -35,6 +36,7 @@ namespace TravelPlanner.Data
         {
             var currentLocationInformation = _locationInformations.Find(l => l.ID == id);
 
+
             if (currentLocationInformation == null)
             {
 
@@ -51,9 +53,30 @@ namespace TravelPlanner.Data
                 Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
 
                 return currentLocationInformation;
+
             }
+
+            var locW = currentLocationInformation.WeatherResult;
+            List<WeatherResult> curLocWeatherResult = new List<WeatherResult>(locW);
+            var currWeatherResultDate = curLocWeatherResult[0].Date;
+            DateTime today = DateTime.Today;
+            var datesDifference = DateTime.Compare(currWeatherResultDate, today);
+
+            if (datesDifference < 0)
+                {
+                    var locationWeather = weatherResultService.GetWeatherFor5Days(id);
+                    currentLocationInformation.WeatherResult = locationWeather;
+                    _locationInformations.Add(currentLocationInformation);
+                    Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
+
+                    return currentLocationInformation;
+
+                }
+            
+
             else
             {
+
                 return currentLocationInformation;
             }
 

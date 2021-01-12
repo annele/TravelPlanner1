@@ -29,11 +29,12 @@ namespace TravelPlanner.Data
             for (int i = 0; i < o["DailyForecasts"].Count(); i++)
             {
                 var headlineText = o["Headline"]["Text"].ToString();
-                var date = Convert.ToDateTime((o["DailyForecasts"][i]["Date"]));
+                var date = Convert.ToDateTime( o["DailyForecasts"][i]["Date"]);
                 var tempDay = Convert.ToDouble(o["DailyForecasts"][i]["Temperature"]["Maximum"]["Value"]);
                 //  var iconNumberDay = Convert.ToInt32(o["DailyForecasts"][i]["Day"]["Icon"]);
                 var tempNight = Convert.ToDouble(o["DailyForecasts"][i]["Temperature"]["Minimum"]["Value"]);
                 // var iconNumbeNight = Convert.ToInt32(o["DailyForecasts"][i]["Night"]["Icon"]);
+              
 
                 weatherList.Add(new WeatherResult(headlineText, date, tempDay, tempNight));
 
