@@ -36,10 +36,8 @@ namespace TravelPlanner.Data
         {
             var currentLocationInformation = _locationInformations.Find(l => l.ID == id);
 
-
             if (currentLocationInformation == null)
             {
-
                 var locationWeather = weatherResultService.GetWeatherFor5Days(id);
                 var locationCityResult = cityResultService.GetById(id);//new CityResult(); // from cityresult storage, or from accuweather api above              
                 var locationCafe = cafeResultService.GetCafeResult(locationCityResult);
@@ -53,7 +51,6 @@ namespace TravelPlanner.Data
                 Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
 
                 return currentLocationInformation;
-
             }
 
             var locW = currentLocationInformation.WeatherResult;
@@ -63,20 +60,18 @@ namespace TravelPlanner.Data
             var datesDifference = DateTime.Compare(currWeatherResultDate, today);
 
             if (datesDifference < 0)
-                {
-                    var locationWeather = weatherResultService.GetWeatherFor5Days(id);
-                    currentLocationInformation.WeatherResult = locationWeather;
-                    _locationInformations.Add(currentLocationInformation);
-                    Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
+            {
+                var locationWeather = weatherResultService.GetWeatherFor5Days(id);
+                currentLocationInformation.WeatherResult = locationWeather;
+                _locationInformations.Add(currentLocationInformation);
+                Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
 
-                    return currentLocationInformation;
+                return currentLocationInformation;
 
-                }
-            
+            }
 
             else
             {
-
                 return currentLocationInformation;
             }
 

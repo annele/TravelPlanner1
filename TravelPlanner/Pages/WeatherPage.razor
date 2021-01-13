@@ -1,6 +1,6 @@
 ﻿@page "/weather"
 @page  "/index/infochoice/weather"
-<!-- TravelPlanner.Data.LocationInformation locationInformation -->
+@inject Data.LocationInformation locationInfo
 
 <h3>Weather forcast</h3>
 
@@ -17,14 +17,16 @@
         </thead>
         <tbody>
 
-            
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            
+            @foreach (var weather in locationInfo.WeatherResult)
+            {
+                <tr>
+                    <td>@weather.HeadlineText</td>
+                    <td>@weather.Date</td>
+                    <td>@weather.TempDay</td>
+                    <td>@weather.TempNight</td>
+                </tr>
+            }
+
         </tbody>
     </table>
 </div>

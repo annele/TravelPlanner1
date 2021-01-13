@@ -2,7 +2,7 @@
 
 @page "/cafe"
 @page  "/index/infochoice/cafe"
-<!-- Data.LocationInformationService locationInformationService-->
+@inject Data.LocationInformation locationInfo
 
 <h3>Cafe list </h3>
 
@@ -20,13 +20,13 @@
         </thead>
         <tbody>
 
-            {
+           @foreach(var cafe in locationInfo.CafeResult) {
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>@cafe.CafeType</td>
+                <td>@cafe.CafeName</td>
+                <td>@cafe.CafeAdress</td>
+                <td>@cafe.AveragePrice</td>
+                <td>@cafe.Rate</td>
             </tr>
             }
         </tbody>
