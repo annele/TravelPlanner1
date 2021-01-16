@@ -14,7 +14,6 @@ namespace TravelPlanner.Data
 {
     public class CafeResultService
     {
-
         public string getUrl(CityResult cityResult)
         {
             string url = "";
@@ -27,7 +26,6 @@ namespace TravelPlanner.Data
 
             return url;
         }
-
 
         public ObservableCollection<CafeResult> GetCafeResults(CityResult cityResult)
         {
@@ -51,19 +49,25 @@ namespace TravelPlanner.Data
             string avPriceXpath = "//p[@class = 'css-a7e1wa ejesmtr0']/span[2]";
             string rateXpath = "//span[@class = 'css-17f8ytt e1l48fgb0']/span[1]";
 
-            for (int i = 0; i < 5; i++) // what if there are less than 5?
+            try
             {
+                for (int i = 0; i < 5; i++) // what if there are less than 5?
+                {
 
-                var type = htmlDoc.DocumentNode.SelectNodes(typeXpath)[i].InnerText;
-                var name = htmlDoc.DocumentNode.SelectNodes(nameXpath)[i].InnerText;
-                var address = htmlDoc.DocumentNode.SelectNodes(addressExpath)[i].InnerText;
-                var averagePrice = htmlDoc.DocumentNode.SelectNodes(avPriceXpath)[i].InnerText;
-                string rate = "";
-                if(htmlDoc.DocumentNode.SelectNodes(rateXpath).Count > i)
-                    rate = htmlDoc.DocumentNode.SelectNodes(rateXpath)[i].InnerText;   //not all cafes have ratings!
+                    var type = htmlDoc.DocumentNode.SelectNodes(typeXpath)[i].InnerText;
+                    var name = htmlDoc.DocumentNode.SelectNodes(nameXpath)[i].InnerText;
+                    var address = htmlDoc.DocumentNode.SelectNodes(addressExpath)[i].InnerText;
+                    var averagePrice = htmlDoc.DocumentNode.SelectNodes(avPriceXpath)[i].InnerText;
+                    string rate = "";
+                    if (htmlDoc.DocumentNode.SelectNodes(rateXpath).Count > i)
+                        rate = htmlDoc.DocumentNode.SelectNodes(rateXpath)[i].InnerText;   //not all cafes have ratings!
 
-                cafeResults.Add(new CafeResult(type, name, address, averagePrice, rate));
-
+                    cafeResults.Add(new CafeResult(type, name, address, averagePrice, rate));
+                }
+            }
+            catch (Exception e)
+            {
+                Utils.Log.LogExceptions(e.Message);
             }
 
             //var link = htmlDoc.DocumentNode.SelectSingleNode("//span[@class = 'enrzupw0 css-1ujxl3z ejesmtr0']").InnerText;

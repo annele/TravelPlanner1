@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <ArrayOfCityResult xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <CityResult>
-    <Longitude>13.406</Longitude>
     <Latitude>52.518</Latitude>
     <ID>178087</ID>
     <City>Berlin</City>
@@ -9,7 +8,6 @@
     <AdministrativeArea>Berlin</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-71.185</Longitude>
     <Latitude>44.469</Latitude>
     <ID>334472</ID>
     <City>Berlin</City>
@@ -17,7 +15,6 @@
     <AdministrativeArea>New Hampshire</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-74.965</Longitude>
     <Latitude>3.723</Latitude>
     <ID>111584</ID>
     <City>Berlin</City>
@@ -25,7 +22,6 @@
     <AdministrativeArea>Tolima</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-74.927</Longitude>
     <Latitude>3.778</Latitude>
     <ID>111585</ID>
     <City>Berlin</City>
@@ -33,7 +29,6 @@
     <AdministrativeArea>Tolima</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-71.701</Longitude>
     <Latitude>0.342</Latitude>
     <ID>111738</ID>
     <City>Berlin</City>
@@ -41,7 +36,6 @@
     <AdministrativeArea>Vaupés</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-84.483</Longitude>
     <Latitude>10.017</Latitude>
     <ID>111888</ID>
     <City>Berlin</City>
@@ -49,7 +43,6 @@
     <AdministrativeArea>Alajuela</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-77.65</Longitude>
     <Latitude>17.917</Latitude>
     <ID>220397</ID>
     <City>Berlin</City>
@@ -57,7 +50,6 @@
     <AdministrativeArea>Saint Elizabeth</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-88.533</Longitude>
     <Latitude>13.5</Latitude>
     <ID>131206</ID>
     <City>Berlin</City>
@@ -65,7 +57,6 @@
     <AdministrativeArea>Usulután</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-74.929</Longitude>
     <Latitude>39.791</Latitude>
     <ID>2174864</ID>
     <City>Berlin</City>
@@ -73,7 +64,6 @@
     <AdministrativeArea>New Jersey</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-88.943</Longitude>
     <Latitude>43.968</Latitude>
     <ID>336534</ID>
     <City>Berlin</City>
@@ -81,7 +71,6 @@
     <AdministrativeArea>Wisconsin</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>27.582</Longitude>
     <Latitude>-32.883</Latitude>
     <ID>297614</ID>
     <City>Berlin</City>
@@ -89,7 +78,6 @@
     <AdministrativeArea>Eastern Cape</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-78.958</Longitude>
     <Latitude>39.921</Latitude>
     <ID>2215361</ID>
     <City>Berlin</City>
@@ -97,7 +85,6 @@
     <AdministrativeArea>Pennsylvania</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-81.794</Longitude>
     <Latitude>40.561</Latitude>
     <ID>2190872</ID>
     <City>Berlin</City>
@@ -105,7 +92,6 @@
     <AdministrativeArea>Ohio</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-98.49</Longitude>
     <Latitude>46.379</Latitude>
     <ID>2134925</ID>
     <City>Berlin</City>
@@ -113,7 +99,6 @@
     <AdministrativeArea>North Dakota</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-75.218</Longitude>
     <Latitude>38.323</Latitude>
     <ID>333557</ID>
     <City>Berlin</City>
@@ -121,7 +106,6 @@
     <AdministrativeArea>Maryland</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-89.903</Longitude>
     <Latitude>39.759</Latitude>
     <ID>2240545</ID>
     <City>Berlin</City>
@@ -129,7 +113,6 @@
     <AdministrativeArea>Illinois</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-83.624</Longitude>
     <Latitude>31.068</Latitude>
     <ID>2168672</ID>
     <City>Berlin</City>
@@ -137,7 +120,6 @@
     <AdministrativeArea>Georgia</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>10.052</Longitude>
     <Latitude>55.466</Latitude>
     <ID>2653034</ID>
     <City>Berlin</City>
@@ -145,7 +127,6 @@
     <AdministrativeArea>South Denmark</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>10.448</Longitude>
     <Latitude>54.036</Latitude>
     <ID>1034548</ID>
     <City>Berlin</City>
@@ -153,7 +134,6 @@
     <AdministrativeArea>Schleswig-Holstein</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-75.526</Longitude>
     <Latitude>9.677</Latitude>
     <ID>111438</ID>
     <City>Berlin</City>
@@ -161,7 +141,6 @@
     <AdministrativeArea>Sucre</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-72.879</Longitude>
     <Latitude>7.186</Latitude>
     <ID>111375</ID>
     <City>Berlin</City>
@@ -169,7 +148,6 @@
     <AdministrativeArea>Santander</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-72.776</Longitude>
     <Latitude>41.611</Latitude>
     <ID>2208043</ID>
     <City>Berlin</City>
@@ -177,7 +155,6 @@
     <AdministrativeArea>Connecticut</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-71.636</Longitude>
     <Latitude>42.384</Latitude>
     <ID>2251059</ID>
     <City>Berlin</City>
@@ -185,7 +162,6 @@
     <AdministrativeArea>Massachusetts</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-73.374</Longitude>
     <Latitude>42.667</Latitude>
     <ID>2083819</ID>
     <City>Berlin</City>
@@ -193,7 +169,6 @@
     <AdministrativeArea>New York</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-72.604</Longitude>
     <Latitude>44.209</Latitude>
     <ID>2634491</ID>
     <City>Berlin</City>
@@ -201,7 +176,6 @@
     <AdministrativeArea>Vermont</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-80.355</Longitude>
     <Latitude>39.053</Latitude>
     <ID>2147958</ID>
     <City>Berlin</City>
@@ -209,7 +183,6 @@
     <AdministrativeArea>West Virginia</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-76.977</Longitude>
     <Latitude>36.858</Latitude>
     <ID>2173328</ID>
     <City>Berlin</City>
@@ -217,7 +190,6 @@
     <AdministrativeArea>Virginia</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-96.446</Longitude>
     <Latitude>30.171</Latitude>
     <ID>2144800</ID>
     <City>Berlin</City>
@@ -225,7 +197,6 @@
     <AdministrativeArea>Texas</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-86.824</Longitude>
     <Latitude>35.53</Latitude>
     <ID>2085213</ID>
     <City>Berlin</City>
@@ -233,7 +204,6 @@
     <AdministrativeArea>Tennessee</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-81.304</Longitude>
     <Latitude>33.674</Latitude>
     <ID>2198473</ID>
     <City>Berlin</City>
@@ -241,7 +211,6 @@
     <AdministrativeArea>South Carolina</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-122.748</Longitude>
     <Latitude>44.498</Latitude>
     <ID>2187275</ID>
     <City>Berlin</City>
@@ -249,7 +218,6 @@
     <AdministrativeArea>Oregon</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-99.625</Longitude>
     <Latitude>35.451</Latitude>
     <ID>2138814</ID>
     <City>Berlin</City>
@@ -257,7 +225,6 @@
     <AdministrativeArea>Oklahoma</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-84.754</Longitude>
     <Latitude>41.61</Latitude>
     <ID>2238431</ID>
     <City>Berlin</City>
@@ -265,7 +232,6 @@
     <AdministrativeArea>Ohio</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-94.351</Longitude>
     <Latitude>40.054</Latitude>
     <ID>2088580</ID>
     <City>Berlin</City>
@@ -273,7 +239,6 @@
     <AdministrativeArea>Missouri</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-84.162</Longitude>
     <Latitude>38.695</Latitude>
     <ID>2163783</ID>
     <City>Berlin</City>
@@ -281,7 +246,6 @@
     <AdministrativeArea>Kentucky</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-94.896</Longitude>
     <Latitude>37.921</Latitude>
     <ID>2148613</ID>
     <City>Berlin</City>
@@ -289,7 +253,6 @@
     <AdministrativeArea>Kansas</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-93.16</Longitude>
     <Latitude>42.419</Latitude>
     <ID>2214552</ID>
     <City>Berlin</City>
@@ -297,7 +260,6 @@
     <AdministrativeArea>Iowa</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-91.763</Longitude>
     <Latitude>33.081</Latitude>
     <ID>2122872</ID>
     <City>Berlin</City>
@@ -305,7 +267,6 @@
     <AdministrativeArea>Arkansas</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-86.742</Longitude>
     <Latitude>34.181</Latitude>
     <ID>2090448</ID>
     <City>Berlin</City>
@@ -313,7 +274,6 @@
     <AdministrativeArea>Alabama</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-87.008</Longitude>
     <Latitude>32.259</Latitude>
     <ID>2254609</ID>
     <City>Berlin</City>
@@ -321,7 +281,6 @@
     <AdministrativeArea>Alabama</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-117.608</Longitude>
     <Latitude>38.882</Latitude>
     <ID>2083409</ID>
     <City>Berlin</City>
@@ -329,7 +288,6 @@
     <AdministrativeArea>Nevada</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-72.017</Longitude>
     <Latitude>8.867</Latitude>
     <ID>1237009</ID>
     <City>Berlin</City>
@@ -337,7 +295,6 @@
     <AdministrativeArea>Zulia</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-88.5</Longitude>
     <Latitude>14.833</Latitude>
     <ID>1176808</ID>
     <City>Berlin</City>
@@ -345,7 +302,6 @@
     <AdministrativeArea>Lempira</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-72.167</Longitude>
     <Latitude>18.817</Latitude>
     <ID>1578476</ID>
     <City>Berlin</City>
@@ -353,7 +309,6 @@
     <AdministrativeArea>Centre</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-86.05</Longitude>
     <Latitude>11.583</Latitude>
     <ID>1179131</ID>
     <City>Berlin</City>
@@ -361,7 +316,6 @@
     <AdministrativeArea>Rivas</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-74.4</Longitude>
     <Latitude>-3.833</Latitude>
     <ID>1480418</ID>
     <City>Berlin</City>
@@ -369,7 +323,6 @@
     <AdministrativeArea>Loreto</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-70.697</Longitude>
     <Latitude>10.849</Latitude>
     <ID>1780367</ID>
     <City>Berlin</City>
@@ -377,7 +330,6 @@
     <AdministrativeArea>Falcón</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>16.283</Longitude>
     <Latitude>59.3</Latitude>
     <ID>755165</ID>
     <City>Berlin</City>
@@ -385,7 +337,6 @@
     <AdministrativeArea>Sodermanland</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-68.549</Longitude>
     <Latitude>8.251</Latitude>
     <ID>1707365</ID>
     <City>Berlin</City>
@@ -393,7 +344,6 @@
     <AdministrativeArea>Barinas</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-86.567</Longitude>
     <Latitude>15.6</Latitude>
     <ID>1176807</ID>
     <City>Berlin</City>
@@ -401,7 +351,6 @@
     <AdministrativeArea>Atlántida</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-69.872</Longitude>
     <Latitude>9.668</Latitude>
     <ID>1653691</ID>
     <City>Berlin</City>
@@ -409,7 +358,6 @@
     <AdministrativeArea>Lara</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-63.479</Longitude>
     <Latitude>10.396</Latitude>
     <ID>1790423</ID>
     <City>Berlin</City>
@@ -417,7 +365,6 @@
     <AdministrativeArea>Sucre</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-70.483</Longitude>
     <Latitude>-17.772</Latitude>
     <ID>1480417</ID>
     <City>Berlin</City>
@@ -425,7 +372,6 @@
     <AdministrativeArea>Tacna</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-79.6</Longitude>
     <Latitude>-2.133</Latitude>
     <ID>1242108</ID>
     <City>Berlin</City>
@@ -433,7 +379,6 @@
     <AdministrativeArea>Guayas</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-74.383</Longitude>
     <Latitude>9.317</Latitude>
     <ID>1364651</ID>
     <City>Berlin</City>
@@ -441,7 +386,6 @@
     <AdministrativeArea>Magdalena</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-76.381</Longitude>
     <Latitude>3.654</Latitude>
     <ID>1777270</ID>
     <City>Berlin</City>
@@ -449,7 +393,6 @@
     <AdministrativeArea>Valle del Cauca</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-72.774</Longitude>
     <Latitude>2.639</Latitude>
     <ID>1600011</ID>
     <City>Berlin</City>
@@ -457,7 +400,6 @@
     <AdministrativeArea>Meta</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-75.424</Longitude>
     <Latitude>3.054</Latitude>
     <ID>1602060</ID>
     <City>Berlin</City>
@@ -465,7 +407,6 @@
     <AdministrativeArea>Huila</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-73.907</Longitude>
     <Latitude>4.801</Latitude>
     <ID>1778368</ID>
     <City>Berlin</City>
@@ -473,7 +414,6 @@
     <AdministrativeArea>Cundinamarca</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-75.75</Longitude>
     <Latitude>8.317</Latitude>
     <ID>1364652</ID>
     <City>Berlin</City>
@@ -481,7 +421,6 @@
     <AdministrativeArea>Córdoba</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-73.683</Longitude>
     <Latitude>9.374</Latitude>
     <ID>1598979</ID>
     <City>Berlin</City>
@@ -489,7 +428,6 @@
     <AdministrativeArea>Cesar</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-72.372</Longitude>
     <Latitude>4.457</Latitude>
     <ID>1772522</ID>
     <City>Berlin</City>
@@ -497,7 +435,6 @@
     <AdministrativeArea>Casanare</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-74.65</Longitude>
     <Latitude>5.783</Latitude>
     <ID>1364654</ID>
     <City>Berlin</City>
@@ -505,7 +442,6 @@
     <AdministrativeArea>Boyacá</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-75.629</Longitude>
     <Latitude>7.073</Latitude>
     <ID>1364653</ID>
     <City>Berlin</City>
@@ -513,7 +449,6 @@
     <AdministrativeArea>Antioquia</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-68.233</Longitude>
     <Latitude>-18.583</Latitude>
     <ID>1331626</ID>
     <City>Berlin</City>
@@ -521,7 +456,6 @@
     <AdministrativeArea>Oruro</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-66.333</Longitude>
     <Latitude>-10.783</Latitude>
     <ID>1331627</ID>
     <City>Berlin</City>
@@ -529,7 +463,6 @@
     <AdministrativeArea>Pando</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>-83.75</Longitude>
     <Latitude>9.417</Latitude>
     <ID>1180193</ID>
     <City>Berlin</City>
@@ -537,11 +470,34 @@
     <AdministrativeArea>San José</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>26.5</Longitude>
     <Latitude>-29.017</Latitude>
     <ID>1149768</ID>
     <City>Berlin</City>
     <County>South Africa</County>
     <AdministrativeArea>Free State</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>14.286</Longitude>
+    <Latitude>48.306</Latitude>
+    <ID>30332</ID>
+    <City>Linz</City>
+    <County>Austria</County>
+    <AdministrativeArea>Upper Austria</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>13.732</Longitude>
+    <Latitude>51.342</Latitude>
+    <ID>1010182</ID>
+    <City>Linz</City>
+    <County>Germany</County>
+    <AdministrativeArea>Saxony</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>13.463</Longitude>
+    <Latitude>48.696</Latitude>
+    <ID>1006795</ID>
+    <City>München</City>
+    <County>Germany</County>
+    <AdministrativeArea>Bavaria</AdministrativeArea>
   </CityResult>
 </ArrayOfCityResult>
