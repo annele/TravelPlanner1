@@ -30,8 +30,11 @@ namespace TravelPlanner.Data
         /// <returns></returns>
         public ObservableCollection<CityResult> GetByName(string cityname)
         {
-            var foundCityResults = _cityResults.FindAll(c => c.City == cityname);
-            ObservableCollection<CityResult> fCityResults = new ObservableCollection<CityResult>(foundCityResults);
+            //handle error if cityname is nulll => return new empty list
+
+
+            var foundCityResults = _cityResults.FindAll(c => c.City.ToLower() == cityname.ToLower());
+
 
 
             if (foundCityResults.Count == 0)
@@ -40,7 +43,7 @@ namespace TravelPlanner.Data
                 var weatherApikey = Utils.APIKey.getAccuWeatherAPIKey();
                 if (weatherApikey == null)
                 {
-
+                    //error handling 
                 }
                 var locations = w.DownloadString($"http://dataservice.accuweather.com/locations/v1/cities/search?apikey={weatherApikey}&q={cityname}");
 
@@ -52,22 +55,23 @@ namespace TravelPlanner.Data
                     var city = o[i]["LocalizedName"].ToString();
                     var country = o[i]["Country"]["LocalizedName"].ToString();
                     var administrativeArea = o[i]["AdministrativeArea"]["LocalizedName"].ToString();
-                    var latidude = (o[i]["GeoPosition"]["Latitude"]).ToString();
-                    var longitute = (o[i]["GeoPosition"]["Longitude"]).ToString();
+                    var latitude = (o[i]["GeoPosition"]["Latitude"]).ToString();
+                    var longitude = (o[i]["GeoPosition"]["Longitude"]).ToString();
 
 
                     string location = city + ", " + country + ", " + administrativeArea;
 
-                    fCityResults.Add(new CityResult(locationKey, city, country, administrativeArea, location, latidude, longitute));
-                    _cityResults.AddRange(fCityResults);
-                    Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
+                    //here we have 1 new result
+
+                    foundCityResults.Add(new CityResult(locationKey, city, country, administrativeArea, location, longitude, latitude));
+
                 }
-                return fCityResults;
+                _cityResults.AddRange(foundCityResults);
+                Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
             }
-            else
-            {
-                return fCityResults;
-            }
+
+            return new ObservableCollection<CityResult>(foundCityResults);
+
         }
 
 
@@ -89,16 +93,16 @@ namespace TravelPlanner.Data
         /// <returns></returns>
         public CityResult GetById(int id)
         {
-            var currentCityResult = _cityResults.Find(i => i.ID == id);
+            var foundCityResult = _cityResults.Find(i => i.ID == id);
 
-            if (currentCityResult == null)
+            if (foundCityResult == null)
             {
                 WebClient w = new WebClient();
 
                 var weatherApikey = Utils.APIKey.getAccuWeatherAPIKey();
                 if (weatherApikey == null)
                 {
-
+                    //error handling ;) 
                 }
                 var locations = w.DownloadString($"http://dataservice.accuweather.com/locations/v1/{id}?apikey={weatherApikey}");
 
@@ -108,21 +112,20 @@ namespace TravelPlanner.Data
                 var city = o["LocalizedName"].ToString();
                 var country = o["Country"]["LocalizedName"].ToString();
                 var administrativeArea = o["AdministrativeArea"]["LocalizedName"].ToString();
-                var latidude = (o["GeoPosition"]["Latitude"]).ToString();
-                var longitute = (o["GeoPosition"]["Longitude"]).ToString();
+                var latitude = (o["GeoPosition"]["Latitude"]).ToString();
+                var longitude = (o["GeoPosition"]["Longitude"]).ToString();
 
                 string location = city + ", " + country + ", " + administrativeArea;
 
-                currentCityResult = new CityResult(locationKey, city, country, administrativeArea, location, latidude, longitute);
-                _cityResults.Add(currentCityResult);
+                foundCityResult = new CityResult(locationKey, city, country, administrativeArea, location,  longitude, latitude);
+
+                _cityResults.Add(foundCityResult);
                 Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
-                return currentCityResult;
 
             }
-            else
-            {
-                return currentCityResult;
-            }
+
+            return foundCityResult;
+
         }
     }
 }

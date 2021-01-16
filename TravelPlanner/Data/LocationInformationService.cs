@@ -10,15 +10,18 @@ namespace TravelPlanner.Data
 {
     public class LocationInformationService
     {
-        public CafeResultService cafeResultService = new CafeResultService();
-        public WeatherResultService weatherResultService = new WeatherResultService();
-        public CityResultService cityResultService = new CityResultService();
-        public CityResult cityResult = new CityResult();
+        public CafeResultService cafeResultService;
+        public WeatherResultService weatherResultService;
+        public CityResultService cityResultService;
 
         public List<LocationInformation> _locationInformations = new List<LocationInformation>();
 
-        public LocationInformationService()
+        public LocationInformationService(CafeResultService cars, WeatherResultService wers, CityResultService cirs)
         {
+            cafeResultService = cars;
+            weatherResultService = wers;
+            cityResultService = cirs;
+
             _locationInformations = Utils.XML.Load<List<LocationInformation>>(@"locationInformation.xml");
         }
 
@@ -34,46 +37,44 @@ namespace TravelPlanner.Data
         /// <returns></returns>
         public LocationInformation GetByID(int id)
         {
-            var currentLocationInformation = _locationInformations.Find(l => l.ID == id);
+            var foundLocationInformation = _locationInformations.Find(l => l.ID == id);
 
-            if (currentLocationInformation == null)
+            if (foundLocationInformation == null)
             {
                 var locationWeather = weatherResultService.GetWeatherFor5Days(id);
                 var locationCityResult = cityResultService.GetById(id);//new CityResult(); // from cityresult storage, or from accuweather api above              
-                var locationCafe = cafeResultService.GetCafeResult(locationCityResult);
+                var locationCafe = cafeResultService.GetCafeResults(locationCityResult);
+                var locationCityName = locationCityResult.City;
 
-                currentLocationInformation = new LocationInformation();
-                currentLocationInformation.CafeResult = locationCafe;
-                currentLocationInformation.WeatherResult = locationWeather;
-                currentLocationInformation.ID = id;
+                foundLocationInformation = new LocationInformation();
+                foundLocationInformation.CafeResults = locationCafe;
+                foundLocationInformation.WeatherResults = locationWeather;
+                foundLocationInformation.ID = id;
+                foundLocationInformation.City = locationCityName;
 
-                _locationInformations.Add(currentLocationInformation);
+                _locationInformations.Add(foundLocationInformation);
                 Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
 
-                return currentLocationInformation;
+                return foundLocationInformation;
             }
 
-            var locW = currentLocationInformation.WeatherResult;
-            List<WeatherResult> curLocWeatherResult = new List<WeatherResult>(locW);
-            var currWeatherResultDate = curLocWeatherResult[0].Date;
+            var storedWeather = foundLocationInformation.WeatherResults;
+            var currWeatherResultDate = storedWeather[0].Date;
+
             DateTime today = DateTime.Today;
             var datesDifference = DateTime.Compare(currWeatherResultDate, today);
 
             if (datesDifference < 0)
             {
-                var locationWeather = weatherResultService.GetWeatherFor5Days(id);
-                currentLocationInformation.WeatherResult = locationWeather;
-                _locationInformations.Add(currentLocationInformation);
+                var currentWeatherResults = weatherResultService.GetWeatherFor5Days(id);
+                foundLocationInformation.WeatherResults = currentWeatherResults;
+                //     _locationInformations.Add(foundLocationInformation);
                 Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
-
-                return currentLocationInformation;
-
             }
 
-            else
-            {
-                return currentLocationInformation;
-            }
+
+            return foundLocationInformation;
+
 
 
             //if not found => get from api

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TravelPlanner.Utils;
 using System.Collections.ObjectModel;
+using System.IO;
 
 namespace TravelPlanner.Data
 {
@@ -22,15 +23,15 @@ namespace TravelPlanner.Data
             string lat = cityResult.Latitude;
             string lon = cityResult.Longitude;
 
-            url = baseUrl + lon + "," + lat;
+            url = baseUrl + lat + "," + lon;
 
             return url;
         }
 
 
-        public ObservableCollection<CafeResult> GetCafeResult(CityResult cityResult)
+        public ObservableCollection<CafeResult> GetCafeResults(CityResult cityResult)
         {
-            var cafeResult = new ObservableCollection<CafeResult>();
+            var cafeResults = new ObservableCollection<CafeResult>();
             var theForkURL = getUrl(cityResult);
 
             // var testURL = getUrl(new CityResult() { Latitude = "48.220778", Longitude = "16.3100205" });
@@ -50,22 +51,30 @@ namespace TravelPlanner.Data
             string avPriceXpath = "//p[@class = 'css-a7e1wa ejesmtr0']/span[2]";
             string rateXpath = "//span[@class = 'css-17f8ytt e1l48fgb0']/span[1]";
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++) // what if there are less than 5?
             {
 
                 var type = htmlDoc.DocumentNode.SelectNodes(typeXpath)[i].InnerText;
                 var name = htmlDoc.DocumentNode.SelectNodes(nameXpath)[i].InnerText;
                 var address = htmlDoc.DocumentNode.SelectNodes(addressExpath)[i].InnerText;
                 var averagePrice = htmlDoc.DocumentNode.SelectNodes(avPriceXpath)[i].InnerText;
-                var rate = htmlDoc.DocumentNode.SelectNodes(rateXpath)[i].InnerText;
+                string rate = "";
+                if(htmlDoc.DocumentNode.SelectNodes(rateXpath).Count > i)
+                    rate = htmlDoc.DocumentNode.SelectNodes(rateXpath)[i].InnerText;   //not all cafes have ratings!
 
-                cafeResult.Add(new CafeResult(type, name, address, averagePrice, rate));
+                cafeResults.Add(new CafeResult(type, name, address, averagePrice, rate));
 
             }
 
             //var link = htmlDoc.DocumentNode.SelectSingleNode("//span[@class = 'enrzupw0 css-1ujxl3z ejesmtr0']").InnerText;
 
-            return cafeResult;
+            return cafeResults;
+        }
+        //put this in A global static class (or service) and call in the catch blocks 
+        void Log(string text)
+        {
+
+            File.AppendAllText("log.txt", DateTime.Now + " : " + text);
         }
 
     }

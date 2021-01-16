@@ -9,19 +9,9 @@ namespace TravelPlanner.Data
     public class WeatherResult
     {
         private DateTime _date;
-       // private int _iconNumberDay;
-       // private int _iconNumberNight;
         private double _tempDay;
         private double _tempNight;
         private string _headlineTexts;
-
-
-
-        //public int IconNumberDay
-        //{
-        //    get { return _iconNumberDay; }
-        //    set { _iconNumberDay = value; }
-        //}
 
         public string HeadlineText
         {
@@ -43,13 +33,6 @@ namespace TravelPlanner.Data
             }
         }
 
-        //public int IconNumbeNight
-        //{
-        //    get { return _iconNumberNight; }
-        //    set { _iconNumberNight = value; }
-        //}
-
-
         public double TempDay
         {
             get { return _tempDay; }
@@ -62,16 +45,13 @@ namespace TravelPlanner.Data
             set { _tempNight = value; }
         }
 
-
-
-        public WeatherResult(string headlineTexts, DateTime date,  double tempDay, double tempNight)
+        public WeatherResult(string headlineTexts, DateTime date, double tempDay, double tempNight)
         {
             _headlineTexts = headlineTexts;
             _date = date;
             _tempDay = tempDay;
             _tempNight = tempNight;
         }
-
 
         public WeatherResult()
         {

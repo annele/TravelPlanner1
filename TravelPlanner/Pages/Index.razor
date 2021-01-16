@@ -18,10 +18,11 @@
 <br />
 
 <div class="locationsList">
-    @foreach(var cityresult in CityResults){
+    @foreach(var cityResult in CityResults){
+        <!-- If the list is empty, display some kind of "no results found"-->
     <ul>
         <li>
-            <a href="/infochoice/@cityresult.ID" > @cityresult</a>   
+            <a href="/infochoice/@cityResult.ID" > @cityResult</a>   
         </li>
     </ul>
     }

@@ -1,0 +1,65 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+@using System.Threading.Tasks;
+@using TravelPlanner.Data;
+
+<h3>Cafe list for @_locationInformation.City</h3>
+
+<button @onclick="Collapse">Cafe List</button>
+
+<div class="cafe">
+
+    @if (_collapsed)
+    {
+        <h4>@_locationInformation.CafeResults[0].CafeName</h4>
+    }
+    else
+    {
+        <table class="cafeTable">
+            <thead>
+                <tr>
+                    <th>Cafe type</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Average Price</th>
+                    <th>Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var cafeResult in _locationInformation.CafeResults)
+                {
+                    <tr>
+                        <td>@cafeResult.CafeType</td>
+                        <td>@cafeResult.CafeName</td>
+                        <td>@cafeResult.CafeAdress</td>
+                        <td>@cafeResult.AveragePrice</td>
+                        <td>@cafeResult.Rate</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+
+@code {
+
+    private bool _collapsed = true;
+
+    private LocationInformation _locationInformation;
+    [Parameter]
+    public LocationInformation LocationInformation
+    {
+        get { return _locationInformation; }
+        set { _locationInformation = value; }
+    }
+
+    public void Collapse()
+    {
+        _collapsed = !_collapsed;
+    }
+
+}

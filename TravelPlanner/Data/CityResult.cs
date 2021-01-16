@@ -21,7 +21,7 @@ namespace TravelPlanner
         {
 
             get { return _longitude; }
-            set { value = _latitude; }
+            set { value = _longitude; }
         }
 
         public string Latitude

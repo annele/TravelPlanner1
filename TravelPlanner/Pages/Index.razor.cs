@@ -20,13 +20,14 @@ namespace TravelPlanner.Pages
         }
 
         /// <summary>
-        /// searches for the locations by the 
+        /// searches for the city using users's input. either takes citydata from cityResults.xml or from the API
         /// </summary>
         public void SearchLocation()
         {
-            var city = cityResultService.GetByName(CitySearch);
-            foreach (var locationList in city)
-                CityResults.Add(locationList);
+            var cities = cityResultService.GetByName(CitySearch);
+            CityResults.Clear();
+            foreach (var city in cities)
+                CityResults.Add(city);
         }
     }
 }

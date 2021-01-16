@@ -10,7 +10,7 @@ namespace TravelPlanner.Utils
     public static class XML
     {
         // XML load generic
-        public static T Load<T>(string filename)
+        public static T Load<T>(string filename) where T : new()
         {
             T locinfo;
             if (File.Exists(filename))
@@ -23,12 +23,11 @@ namespace TravelPlanner.Utils
             }
             else
             {
-                return default(T);
+                return new T();
             }
         }
 
         //XML save generic
-        //save() 
         //saves __locationInformations to file
         public static void Save<T>(string filename, T type)
         {

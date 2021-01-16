@@ -1,41 +1,30 @@
 ﻿@page "/infochoice/{LocationID:int}"
 @inject Data.LocationInformationService locationInformationService
 @inject Data.WeatherResultService weatherResultServise
+
 <h3>
 </h3>
 
-<div class="infochoice">
-    <p>
-        <button type="submit">Weather</button>
-    </p>
-</div>
-<div>
-    <p>
-        <WeatherPage></WeatherPage>
-    </p>
-</div>
-
-
-<div class="infochoice">
-    <p>
-        <button type="submit">Cafe List</button>
-       
-    </p>
-</div>
 
 <div>
-    <p>
-        <CafePage></CafePage>
-    </p>
+    <Weather LocationInformation="@_locationData"/>
+</div>
+
+
+
+<div>
+    <Cafes LocationInformation="@_locationData"/>   
 </div>
 
 @code {
     [Parameter]
     public int LocationID { get; set; } = 0;
 
+    private Data.LocationInformation _locationData;
+
     protected override void OnInitialized()
     {
-        var locationData = locationInformationService.GetByID(LocationID);
+        _locationData = locationInformationService.GetByID(LocationID);
 
     }
 
