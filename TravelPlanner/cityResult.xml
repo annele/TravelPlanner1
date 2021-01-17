@@ -477,7 +477,6 @@
     <AdministrativeArea>Free State</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>14.286</Longitude>
     <Latitude>48.306</Latitude>
     <ID>30332</ID>
     <City>Linz</City>
@@ -485,7 +484,6 @@
     <AdministrativeArea>Upper Austria</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>13.732</Longitude>
     <Latitude>51.342</Latitude>
     <ID>1010182</ID>
     <City>Linz</City>
@@ -493,7 +491,6 @@
     <AdministrativeArea>Saxony</AdministrativeArea>
   </CityResult>
   <CityResult>
-    <Longitude>13.463</Longitude>
     <Latitude>48.696</Latitude>
     <ID>1006795</ID>
     <City>München</City>

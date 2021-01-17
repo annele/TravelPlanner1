@@ -11,6 +11,8 @@ namespace TravelPlanner.Pages
     public partial class Index
     {
         public string citySearch;
+        public string emptyResults;
+
         public ObservableCollection<CityResult> CityResults { get; set; } = new ObservableCollection<CityResult>();
 
         public string CitySearch
@@ -25,9 +27,17 @@ namespace TravelPlanner.Pages
         public void SearchLocation()
         {
             var cities = cityResultService.GetByName(CitySearch);
-            CityResults.Clear();
-            foreach (var city in cities)
-                CityResults.Add(city);
+            if (cities.Count() > 0)
+            {
+                CityResults.Clear();
+                foreach (var city in cities)
+                    CityResults.Add(city);
+            }
+            else
+                CityResults.Clear();
+            emptyResults = "No results found";
+
+
         }
     }
 }

@@ -31,11 +31,12 @@ namespace TravelPlanner.Data
         public ObservableCollection<CityResult> GetByName(string cityname)
         {
             //handle error if cityname is nulll => return new empty list
-
+            if (cityname == null)
+            {
+                return new ObservableCollection<CityResult>();
+            }
 
             var foundCityResults = _cityResults.FindAll(c => c.City.ToLower() == cityname.ToLower());
-
-
 
             if (foundCityResults.Count == 0)
             {

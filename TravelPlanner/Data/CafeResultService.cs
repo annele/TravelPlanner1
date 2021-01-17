@@ -32,7 +32,6 @@ namespace TravelPlanner.Data
             var cafeResults = new ObservableCollection<CafeResult>();
             var theForkURL = getUrl(cityResult);
 
-            // var testURL = getUrl(new CityResult() { Latitude = "48.220778", Longitude = "16.3100205" });
             var wc = new GZipWebClient();
             wc.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.60");
             wc.Headers.Add("Accept-Language", "en-US,en;q=0.9");
@@ -74,12 +73,5 @@ namespace TravelPlanner.Data
 
             return cafeResults;
         }
-        //put this in A global static class (or service) and call in the catch blocks 
-        void Log(string text)
-        {
-
-            File.AppendAllText("log.txt", DateTime.Now + " : " + text);
-        }
-
     }
 }

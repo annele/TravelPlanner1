@@ -7,7 +7,7 @@
 <div class="hello">
     <h1>Welcome to Travel Planner App</h1>
     <p>
-        <h3>Please enter the desired  travel destination</h3>
+        <h3>Please enter the desired travel destination</h3>
     </p>
 </div>
 
@@ -18,12 +18,23 @@
 <br />
 
 <div class="locationsList">
-    @foreach(var cityResult in CityResults){
-        <!-- If the list is empty, display some kind of "no results found"-->
-    <ul>
-        <li>
-            <a href="/infochoice/@cityResult.ID" > @cityResult</a>   
-        </li>
-    </ul>
+
+    @if (CityResults.Count() > 0)
+    {
+        foreach (var cityResult in CityResults)
+        {
+
+            <!-- If the list is empty, display some kind of "no results found"-->
+            <ul>
+                <li>
+                    <a href="/infochoice/@cityResult.ID"> @cityResult</a>
+                </li>
+            </ul>
+        }
     }
+    else
+    {
+        <h4>@emptyResults</h4>
+    }
+
 </div>
