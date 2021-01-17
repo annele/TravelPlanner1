@@ -497,4 +497,348 @@
     <County>Germany</County>
     <AdministrativeArea>Bavaria</AdministrativeArea>
   </CityResult>
+  <CityResult>
+    <Longitude>2.351</Longitude>
+    <Latitude>48.857</Latitude>
+    <ID>623</ID>
+    <City>Paris</City>
+    <County>France</County>
+    <AdministrativeArea>Ville de Paris</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-95.556</Longitude>
+    <Latitude>33.661</Latitude>
+    <ID>331123</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Texas</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-80.396</Longitude>
+    <Latitude>43.207</Latitude>
+    <ID>55035</ID>
+    <City>Paris</City>
+    <County>Canada</County>
+    <AdministrativeArea>Ontario</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-88.327</Longitude>
+    <Latitude>36.302</Latitude>
+    <ID>335676</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Tennessee</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-87.696</Longitude>
+    <Latitude>39.611</Latitude>
+    <ID>332713</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Illinois</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-84.253</Longitude>
+    <Latitude>38.21</Latitude>
+    <ID>333309</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Kentucky</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-80.513</Longitude>
+    <Latitude>40.404</Latitude>
+    <ID>2156144</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Pennsylvania</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-111.401</Longitude>
+    <Latitude>42.227</Latitude>
+    <ID>332617</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Idaho</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-93.73</Longitude>
+    <Latitude>35.292</Latitude>
+    <ID>336932</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Arkansas</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-92.001</Longitude>
+    <Latitude>39.481</Latitude>
+    <ID>334074</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Missouri</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>122.634</Longitude>
+    <Latitude>0.691</Latitude>
+    <ID>3483313</ID>
+    <City>Paris</City>
+    <County>Indonesia</County>
+    <AdministrativeArea>Gorontalo</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>8.49</Longitude>
+    <Latitude>56.514</Latitude>
+    <ID>2651798</ID>
+    <City>Paris</City>
+    <County>Denmark</County>
+    <AdministrativeArea>Central Jutland</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-138.65</Longitude>
+    <Latitude>63.816</Latitude>
+    <ID>1365884</ID>
+    <City>Paris</City>
+    <County>Canada</County>
+    <AdministrativeArea>Yukon Territory</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>138.491</Longitude>
+    <Latitude>-4.459</Latitude>
+    <ID>3489798</ID>
+    <City>Paris</City>
+    <County>Indonesia</County>
+    <AdministrativeArea>Papua</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-157.491</Longitude>
+    <Latitude>1.934</Latitude>
+    <ID>2279411</ID>
+    <City>Paris</City>
+    <County>Kiribati</County>
+    <AdministrativeArea>Line Islands</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-70.488</Longitude>
+    <Latitude>44.244</Latitude>
+    <ID>2183517</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Maine</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-75.266</Longitude>
+    <Latitude>42.98</Latitude>
+    <ID>2128342</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>New York</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-88.012</Longitude>
+    <Latitude>42.626</Latitude>
+    <ID>2249015</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Wisconsin</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-90.603</Longitude>
+    <Latitude>42.639</Latitude>
+    <ID>2636548</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Wisconsin</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-89.46</Longitude>
+    <Latitude>34.179</Latitude>
+    <ID>2159857</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Mississippi</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-77.951</Longitude>
+    <Latitude>39.005</Latitude>
+    <ID>2220080</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Virginia</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-82.362</Longitude>
+    <Latitude>34.894</Latitude>
+    <ID>2621864</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>South Carolina</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-123.771</Longitude>
+    <Latitude>44.253</Latitude>
+    <ID>2187806</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Oregon</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-71.321</Longitude>
+    <Latitude>44.651</Latitude>
+    <ID>2174481</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>New Hampshire</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-85.503</Longitude>
+    <Latitude>43.773</Latitude>
+    <ID>2227666</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Michigan</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-91.579</Longitude>
+    <Latitude>42.239</Latitude>
+    <ID>348338</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Iowa</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-85.634</Longitude>
+    <Latitude>38.824</Latitude>
+    <ID>2124255</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Indiana</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-92.592</Longitude>
+    <Latitude>40.789</Latitude>
+    <ID>2213560</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Iowa</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-118.181</Longitude>
+    <Latitude>34.472</Latitude>
+    <ID>2142895</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>California</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-67.135</Longitude>
+    <Latitude>18.205</Latitude>
+    <ID>2096970</ID>
+    <City>Paris</City>
+    <County>Puerto Rico</County>
+    <AdministrativeArea>Mayagüez</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-76.583</Longitude>
+    <Latitude>38.703</Latitude>
+    <ID>2106782</ID>
+    <City>Paris</City>
+    <County>United States</County>
+    <AdministrativeArea>Maryland</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-75.339</Longitude>
+    <Latitude>-11.062</Latitude>
+    <ID>1846046</ID>
+    <City>Paris</City>
+    <County>Peru</County>
+    <AdministrativeArea>Junín</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-80.55</Longitude>
+    <Latitude>8.05</Latitude>
+    <ID>1539738</ID>
+    <City>Paris</City>
+    <County>Panama</County>
+    <AdministrativeArea>Herrera</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-74.167</Longitude>
+    <Latitude>18.3</Latitude>
+    <ID>1571847</ID>
+    <City>Paris</City>
+    <County>Haiti</County>
+    <AdministrativeArea>South</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-72.35</Longitude>
+    <Latitude>19.7</Latitude>
+    <ID>1571845</ID>
+    <City>Paris</City>
+    <County>Haiti</County>
+    <AdministrativeArea>North</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-73.917</Longitude>
+    <Latitude>18.5</Latitude>
+    <ID>1571846</ID>
+    <City>Paris</City>
+    <County>Haiti</County>
+    <AdministrativeArea>Grande Anse</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>10</Longitude>
+    <Latitude>-0.567</Latitude>
+    <ID>1132300</ID>
+    <City>Paris</City>
+    <County>Gabon</County>
+    <AdministrativeArea>Moyen-Ogooué</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>15.641</Longitude>
+    <Latitude>1.553</Latitude>
+    <ID>1607648</ID>
+    <City>Paris</City>
+    <County>Republic of the Congo</County>
+    <AdministrativeArea>Sangha</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>14.169</Longitude>
+    <Latitude>-4.263</Latitude>
+    <ID>843413</ID>
+    <City>Paris</City>
+    <County>Republic of the Congo</County>
+    <AdministrativeArea>Pool</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-62.483</Longitude>
+    <Latitude>-13.55</Latitude>
+    <ID>1324829</ID>
+    <City>Paris</City>
+    <County>Bolivia</County>
+    <AdministrativeArea>El Beni</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>6.683</Longitude>
+    <Latitude>0.333</Latitude>
+    <ID>1140470</ID>
+    <City>Paris</City>
+    <County>Sao Tome and Principe</County>
+    <AdministrativeArea>São Tomé</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>12.45</Longitude>
+    <Latitude>-1.283</Latitude>
+    <ID>1132299</ID>
+    <City>Paris</City>
+    <County>Gabon</County>
+    <AdministrativeArea>Ogooué-Lolo</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>1.083</Longitude>
+    <Latitude>7.15</Latitude>
+    <ID>1081757</ID>
+    <City>Paris</City>
+    <County>Togo</County>
+    <AdministrativeArea>Plateaux</AdministrativeArea>
+  </CityResult>
 </ArrayOfCityResult>

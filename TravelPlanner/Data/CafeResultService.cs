@@ -52,11 +52,12 @@ namespace TravelPlanner.Data
             {
                 for (int i = 0; i < 5; i++) // what if there are less than 5?
                 {
-
                     var type = htmlDoc.DocumentNode.SelectNodes(typeXpath)[i].InnerText;
                     var name = htmlDoc.DocumentNode.SelectNodes(nameXpath)[i].InnerText;
                     var address = htmlDoc.DocumentNode.SelectNodes(addressExpath)[i].InnerText;
-                    var averagePrice = htmlDoc.DocumentNode.SelectNodes(avPriceXpath)[i].InnerText;
+                    string averagePrice = "";
+                    if(htmlDoc.DocumentNode.SelectNodes(avPriceXpath).Count >  1)
+                     averagePrice = htmlDoc.DocumentNode.SelectNodes(avPriceXpath)[i].InnerText;
                     string rate = "";
                     if (htmlDoc.DocumentNode.SelectNodes(rateXpath).Count > i)
                         rate = htmlDoc.DocumentNode.SelectNodes(rateXpath)[i].InnerText;   //not all cafes have ratings!

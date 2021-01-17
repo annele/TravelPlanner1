@@ -34,10 +34,10 @@ namespace TravelPlanner.Pages
                     CityResults.Add(city);
             }
             else
+            {
                 CityResults.Clear();
-            emptyResults = "No results found";
-
-
+                emptyResults = "No results found";
+            }
         }
     }
 }

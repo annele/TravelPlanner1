@@ -42,12 +42,12 @@ namespace TravelPlanner.Data
             {
                 WebClient w = new WebClient();
                 var weatherApikey = Utils.APIKey.getAccuWeatherAPIKey();
-                if (weatherApikey == null)
+                if (weatherApikey == "")
                 {
-                    //error handling 
+                    return new ObservableCollection<CityResult>();                  
                 }
-                var locations = w.DownloadString($"http://dataservice.accuweather.com/locations/v1/cities/search?apikey={weatherApikey}&q={cityname}");
 
+                var locations = w.DownloadString($"http://dataservice.accuweather.com/locations/v1/cities/search?apikey={weatherApikey}&q={cityname}");
                 JArray o = JArray.Parse(locations);
 
                 for (int i = 0; i < o.Count; i++)
@@ -59,33 +59,17 @@ namespace TravelPlanner.Data
                     var latitude = (o[i]["GeoPosition"]["Latitude"]).ToString();
                     var longitude = (o[i]["GeoPosition"]["Longitude"]).ToString();
 
-
                     string location = city + ", " + country + ", " + administrativeArea;
 
                     //here we have 1 new result
 
                     foundCityResults.Add(new CityResult(locationKey, city, country, administrativeArea, location, longitude, latitude));
-
                 }
                 _cityResults.AddRange(foundCityResults);
                 Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
             }
-
             return new ObservableCollection<CityResult>(foundCityResults);
-
         }
-
-
-        //implement a list of cityresult storage (like locationinformations)  (load and save XML)
-
-        //public CityResult getByID
-        // if we have it in storage, serve, if not:
-        //lookup via (Accuweather ID to CityResult) https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/%7BlocationKey%7D
-        //store
-
-        //public obscollection<CityResult> getByName
-        // if we have it in storage, serve, if not:
-        //lookup via (Accuweather ID to CityResult) https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/%7BlocationKey%7D
 
         /// <summary>
         /// checks by ID whether the cityResult is already in storage, if not gets from API and saves it
@@ -118,15 +102,12 @@ namespace TravelPlanner.Data
 
                 string location = city + ", " + country + ", " + administrativeArea;
 
-                foundCityResult = new CityResult(locationKey, city, country, administrativeArea, location,  longitude, latitude);
+                foundCityResult = new CityResult(locationKey, city, country, administrativeArea, location, longitude, latitude);
 
                 _cityResults.Add(foundCityResult);
                 Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
-
             }
-
             return foundCityResult;
-
         }
     }
 }

@@ -18,23 +18,26 @@ namespace TravelPlanner.Data
             var weatherList = new ObservableCollection<WeatherResult>();
 
             var weatherApikey = Utils.APIKey.getAccuWeatherAPIKey();
+            if (weatherApikey == "")
+            {
+                return new ObservableCollection<WeatherResult>();
+            }
+
             WebClient w = new WebClient();
-
-            var weatherData = w.DownloadString($"http://dataservice.accuweather.com/forecasts/v1/daily/5day/{locationkey}?apikey={weatherApikey}&metric=true");
-
+            var weatherData = w.DownloadString($"http://dataservice.accuweather.com/forecasts/v1/daily/5day/{locationkey}?apikey={weatherApikey}&details=true&metric=true");
             JObject o = JObject.Parse(weatherData);
 
             for (int i = 0; i < o["DailyForecasts"].Count(); i++)
             {
                 var headlineText = o["Headline"]["Text"].ToString();
-                var date = Convert.ToDateTime( o["DailyForecasts"][i]["Date"]);
+                var date = Convert.ToDateTime(o["DailyForecasts"][i]["Date"]);
                 var tempDay = Convert.ToDouble(o["DailyForecasts"][i]["Temperature"]["Maximum"]["Value"]);
+                var daySummary = (o["DailyForecasts"][i]["Day"]["LongPhrase"]).ToString();
                 var tempNight = Convert.ToDouble(o["DailyForecasts"][i]["Temperature"]["Minimum"]["Value"]);
-              
-                weatherList.Add(new WeatherResult(headlineText, date, tempDay, tempNight));
+                var nightSummary = (o["DailyForecasts"][i]["Night"]["LongPhrase"]).ToString();
 
+                weatherList.Add(new WeatherResult(headlineText, date, tempDay, tempNight, daySummary, nightSummary));
             }
-
             return weatherList;
         }
 

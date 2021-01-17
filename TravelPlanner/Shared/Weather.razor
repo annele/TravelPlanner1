@@ -16,12 +16,15 @@
     }
     else
     {
+
+        <h4>@_locationInformation.WeatherResults[0].HeadlineText</h4>
         <table class="weatherTable">
             <thead>
-                <tr>
-                    <th>Summary</th>
+                <tr>                   
                     <th>Date</th>
+                    <th>Day summary</th>
                     <th>Temperature Day</th>
+                    <th>Night summary</th>
                     <th>Temperature Night</th>
                 </tr>
             </thead>
@@ -30,13 +33,13 @@
                 @foreach (var weatherResult in _locationInformation.WeatherResults)
                 {
                     <tr>
-                        <td>@weatherResult.HeadlineText</td>
                         <td>@weatherResult.Date</td>
+                        <td>@weatherResult.DaySummary</td>
                         <td>@weatherResult.TempDay</td>
+                        <td>@weatherResult.NightSummary</td>
                         <td>@weatherResult.TempNight</td>
                     </tr>
                 }
-
             </tbody>
         </table>
     }

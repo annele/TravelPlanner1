@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TravelPlanner.Data
 {
@@ -12,6 +8,20 @@ namespace TravelPlanner.Data
         private double _tempDay;
         private double _tempNight;
         private string _headlineTexts;
+        private string _daySummary;
+        private string _nightSummary;
+
+        public string NightSummary
+        {
+            get { return _nightSummary; }
+            set { _nightSummary = value; }
+        }
+
+        public string DaySummary
+        {
+            get { return _daySummary; }
+            set { _daySummary = value; }
+        }
 
         public string HeadlineText
         {
@@ -45,12 +55,14 @@ namespace TravelPlanner.Data
             set { _tempNight = value; }
         }
 
-        public WeatherResult(string headlineTexts, DateTime date, double tempDay, double tempNight)
+        public WeatherResult(string headlineTexts, DateTime date, double tempDay, double tempNight, string daySummary, string nightSummary)
         {
             _headlineTexts = headlineTexts;
             _date = date;
             _tempDay = tempDay;
             _tempNight = tempNight;
+            _daySummary = daySummary;
+            _nightSummary = nightSummary;
         }
 
         public WeatherResult()
