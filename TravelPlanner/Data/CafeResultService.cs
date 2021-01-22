@@ -23,7 +23,7 @@ namespace TravelPlanner.Data
             string lon = cityResult.Longitude;
 
             url = baseUrl + lat + "," + lon;
-
+           
             return url;
         }
 

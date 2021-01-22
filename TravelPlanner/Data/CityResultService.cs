@@ -87,7 +87,7 @@ namespace TravelPlanner.Data
                 var weatherApikey = Utils.APIKey.getAccuWeatherAPIKey();
                 if (weatherApikey == null)
                 {
-                    //error handling ;) 
+                    return new CityResult();
                 }
                 var locations = w.DownloadString($"http://dataservice.accuweather.com/locations/v1/{id}?apikey={weatherApikey}");
 

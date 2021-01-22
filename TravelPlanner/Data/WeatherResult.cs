@@ -39,9 +39,10 @@ namespace TravelPlanner.Data
         {
             get
             {
-                return _date.ToString("f");
+                return _date.ToString();
             }
         }
+
 
         public double TempDay
         {

@@ -21,7 +21,6 @@ namespace TravelPlanner.Data
             cafeResultService = cars;
             weatherResultService = wers;
             cityResultService = cirs;
-
             _locationInformations = Utils.XML.Load<List<LocationInformation>>(@"locationInformation.xml");
         }
 
@@ -68,20 +67,11 @@ namespace TravelPlanner.Data
             {
                 var currentWeatherResults = weatherResultService.GetWeatherFor5Days(id);
                 foundLocationInformation.WeatherResults = currentWeatherResults;
-                //     _locationInformations.Add(foundLocationInformation);
                 Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
             }
 
-
             return foundLocationInformation;
 
-
-
-            //if not found => get from api
-            // save to __locationInformations
-            //save xml
-
-            //return result;
         }
 
     }

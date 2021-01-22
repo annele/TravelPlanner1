@@ -30,7 +30,8 @@ namespace TravelPlanner.Data
             for (int i = 0; i < o["DailyForecasts"].Count(); i++)
             {
                 var headlineText = o["Headline"]["Text"].ToString();
-                var date = Convert.ToDateTime(o["DailyForecasts"][i]["Date"]);
+                var date = Convert.ToDateTime(o["DailyForecasts"][i]["Date"]).Date;
+                
                 var tempDay = Convert.ToDouble(o["DailyForecasts"][i]["Temperature"]["Maximum"]["Value"]);
                 var daySummary = (o["DailyForecasts"][i]["Day"]["LongPhrase"]).ToString();
                 var tempNight = Convert.ToDouble(o["DailyForecasts"][i]["Temperature"]["Minimum"]["Value"]);

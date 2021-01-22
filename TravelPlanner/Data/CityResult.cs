@@ -1,4 +1,4 @@
-﻿namespace TravelPlanner
+﻿namespace TravelPlanner.Data
 {
     public class CityResult
     {
@@ -15,7 +15,7 @@
         {
 
             get { return _longitude; }
-            set { value = _longitude; }
+            set { _longitude = value ; }
         }
 
         public string Latitude
