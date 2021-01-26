@@ -1035,4 +1035,44 @@
     <County>Sweden</County>
     <AdministrativeArea>Ostergotland</AdministrativeArea>
   </CityResult>
+  <CityResult>
+    <Longitude>10.899</Longitude>
+    <Latitude>48.367</Latitude>
+    <ID>167558</ID>
+    <City>Augsburg</City>
+    <County>Germany</County>
+    <AdministrativeArea>Bavaria</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-77.18</Longitude>
+    <Latitude>45.527</Latitude>
+    <ID>3379806</ID>
+    <City>Augsburg</City>
+    <County>Canada</County>
+    <AdministrativeArea>Ontario</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-93.238</Longitude>
+    <Latitude>35.415</Latitude>
+    <ID>2099971</ID>
+    <City>Augsburg</City>
+    <County>United States</County>
+    <AdministrativeArea>Arkansas</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>-89.013</Longitude>
+    <Latitude>38.867</Latitude>
+    <ID>2256522</ID>
+    <City>Augsburg</City>
+    <County>United States</County>
+    <AdministrativeArea>Illinois</AdministrativeArea>
+  </CityResult>
+  <CityResult>
+    <Longitude>30.917</Longitude>
+    <Latitude>-27.283</Latitude>
+    <ID>1149943</ID>
+    <City>Augsburg</City>
+    <County>South Africa</County>
+    <AdministrativeArea>Mpumalanga</AdministrativeArea>
+  </CityResult>
 </ArrayOfCityResult>

@@ -44,12 +44,7 @@ namespace UnitTestProject1
             var cr = new TravelPlanner.Data.CityResult();
             cr.Latitude = "52.520008";
             cr.Longitude = "13.404954";
-            cafeResult.CafeType = "Coffe";
-            cafeResult.CafeName = "Espressolab";
-            cafeResult.CafeAdress = "Lorenzerplatz";
-            cafeResult.AveragePrice = "3";
-            cafeResult.Rate = "9";
-
+            
             //act
 
             var res = crs.GetCafeResults(cr);
@@ -57,11 +52,9 @@ namespace UnitTestProject1
             //assert
          
             Assert.AreEqual(number, 5);
-            Assert.IsNotNull(res[0]);
-          
+            Assert.IsNotNull(res[0]);         
 
         }
-
 
     }
 }

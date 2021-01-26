@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,6 +33,10 @@ namespace TravelPlanner
             services.AddSingleton<CafeResultService>();
             services.AddSingleton<LocationInformationService>();
             services.AddSingleton<CityResultService>();
+            
+            services.AddDbContext<SqlDbContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("SqlDbContext")));
+            services.AddServerSideBlazor().AddCircuitOptions(o => o.DetailedErrors = true);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
