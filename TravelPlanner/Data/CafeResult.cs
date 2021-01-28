@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace TravelPlanner.Data
         private string _cafeAddress;
         private string _rate;
         private string _averagePrice;
+        [Key]
+        public int ID { get; set; }
 
         public string AveragePrice
         {

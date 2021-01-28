@@ -31,5 +31,15 @@ namespace TravelPlanner.Data
         {
             get; set;
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // https://docs.microsoft.com/en-gb/ef/ef6/modeling/code-first/fluent/relationships?redirectedfrom=MSDN
+
+            modelBuilder.Entity<LocationInformation>().HasMany(i => i.CafeResults);
+            modelBuilder.Entity<LocationInformation>().HasMany(i => i.WeatherResults);
+         
+
+        }
     }
 }

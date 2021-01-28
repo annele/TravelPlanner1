@@ -11,16 +11,19 @@ namespace TravelPlanner.Data
 {
     public class CityResultService
     {
-        private List<CityResult> _cityResults { get; set; } = new List<CityResult>();
+     //   private List<CityResult> _cityResults { get; set; } = new List<CityResult>();
+        private SqlDbContext _context;
 
-        public CityResultService()
+        public CityResultService(SqlDbContext ctx)
         {
-            _cityResults = Utils.XML.Load<List<CityResult>>(@"cityResult.xml");
+            _context = ctx;
+           // _cityResults = Utils.XML.Load<List<CityResult>>(@"cityResult.xml");
         }
 
         public void Add(CityResult cityResult)
         {
-            _cityResults.Add(cityResult);
+            _context.CityResults.Add(cityResult);
+            _context.SaveChanges();
         }
 
         /// <summary>
@@ -36,7 +39,9 @@ namespace TravelPlanner.Data
                 return new ObservableCollection<CityResult>();
             }
 
-            var foundCityResults = _cityResults.FindAll(c => c.City.ToLower() == cityname.ToLower());
+            var foundCityResults = _context.CityResults.Where(c => c.City.ToLower() == cityname.ToLower()).ToList();
+
+  
 
             if (foundCityResults.Count == 0)
             {
@@ -65,8 +70,9 @@ namespace TravelPlanner.Data
 
                     foundCityResults.Add(new CityResult(locationKey, city, country, administrativeArea, location, longitude, latitude));
                 }
-                _cityResults.AddRange(foundCityResults);
-                Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
+                _context.CityResults.AddRange(foundCityResults);
+                _context.SaveChanges();
+                //Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
             }
             return new ObservableCollection<CityResult>(foundCityResults);
         }
@@ -78,7 +84,7 @@ namespace TravelPlanner.Data
         /// <returns></returns>
         public CityResult GetById(int id)
         {
-            var foundCityResult = _cityResults.Find(i => i.ID == id);
+            var foundCityResult = _context.CityResults.Find(id);
 
             if (foundCityResult == null)
             {
@@ -104,8 +110,9 @@ namespace TravelPlanner.Data
 
                 foundCityResult = new CityResult(locationKey, city, country, administrativeArea, location, longitude, latitude);
 
-                _cityResults.Add(foundCityResult);
-                Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
+                _context.CityResults.Add(foundCityResult);
+                _context.SaveChanges();
+               // Utils.XML.Save<List<CityResult>>(@"cityResult.xml", _cityResults);
             }
             return foundCityResult;
         }

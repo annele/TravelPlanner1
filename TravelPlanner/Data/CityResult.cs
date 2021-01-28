@@ -1,4 +1,7 @@
-﻿namespace TravelPlanner.Data
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TravelPlanner.Data
 {
     public class CityResult
     {
@@ -24,8 +27,9 @@
             set { _latitude = value; }
         }
 
-
-        public int ID
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ID2
         {
             get { return _id; }
             set { _id = value; }

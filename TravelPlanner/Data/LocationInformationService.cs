@@ -14,20 +14,22 @@ namespace TravelPlanner.Data
         public WeatherResultService weatherResultService;
         public CityResultService cityResultService;
 
-        public List<LocationInformation> _locationInformations = new List<LocationInformation>();
+       // public List<LocationInformation> _locationInformations = new List<LocationInformation>();
+        private SqlDbContext _context;
 
-        public LocationInformationService(CafeResultService cars, WeatherResultService wers, CityResultService cirs)
+        public LocationInformationService(CafeResultService cars, WeatherResultService wers, CityResultService cirs, SqlDbContext ctx)
         {
             cafeResultService = cars;
             weatherResultService = wers;
             cityResultService = cirs;
-            _locationInformations = Utils.XML.Load<List<LocationInformation>>(@"locationInformation.xml");
+           // _locationInformations = Utils.XML.Load<List<LocationInformation>>(@"locationInformation.xml");
+            _context = ctx;
         }
 
-        public void Add(LocationInformation locationInformation)
-        {
-            _locationInformations.Add(locationInformation);
-        }
+        //public void Add(LocationInformation locationInformation)
+        //{
+        //    _context.LocationInformations.Add(locationInformation);
+        //}
 
         /// <summary>
         /// 
@@ -36,7 +38,8 @@ namespace TravelPlanner.Data
         /// <returns></returns>
         public LocationInformation GetByID(int id)
         {
-            var foundLocationInformation = _locationInformations.Find(l => l.ID == id);
+            //var foundLocationInformation = _locationInformations.Find(l => l.ID == id);
+            var foundLocationInformation = _context.LocationInformations.Find(id);
 
             if (foundLocationInformation == null)
             {
@@ -51,8 +54,10 @@ namespace TravelPlanner.Data
                 foundLocationInformation.ID = id;
                 foundLocationInformation.City = locationCityName;
 
-                _locationInformations.Add(foundLocationInformation);
-                Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
+                //_locationInformations.Add(foundLocationInformation);
+                _context.LocationInformations.Add(foundLocationInformation);
+                _context.SaveChanges();
+                //Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
 
                 return foundLocationInformation;
             }
@@ -67,7 +72,8 @@ namespace TravelPlanner.Data
             {
                 var currentWeatherResults = weatherResultService.GetWeatherFor5Days(id);
                 foundLocationInformation.WeatherResults = currentWeatherResults;
-                Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
+                _context.SaveChanges();
+                //Utils.XML.Save<List<LocationInformation>>(@"locationInformation.xml", _locationInformations);
             }
 
             return foundLocationInformation;

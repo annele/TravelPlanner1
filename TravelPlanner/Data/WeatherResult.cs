@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace TravelPlanner.Data
 {
@@ -11,6 +12,8 @@ namespace TravelPlanner.Data
         private string _daySummary;
         private string _nightSummary;
 
+        [Key]
+        public int ID { get; set; }
         public string NightSummary
         {
             get { return _nightSummary; }

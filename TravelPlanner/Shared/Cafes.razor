@@ -13,7 +13,7 @@
 
     @if (_collapsed)
     {
-        <h4>@_locationInformation.CafeResults[0].CafeName</h4>
+        <h4>@_locationInformation.CafeResults.FirstOrDefault()?.CafeName</h4>
     }
     else
     {

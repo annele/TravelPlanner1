@@ -1075,4 +1075,12 @@
     <County>South Africa</County>
     <AdministrativeArea>Mpumalanga</AdministrativeArea>
   </CityResult>
+  <CityResult>
+    <Longitude>15.439</Longitude>
+    <Latitude>47.07</Latitude>
+    <ID>30915</ID>
+    <City>Graz</City>
+    <County>Austria</County>
+    <AdministrativeArea>Styria</AdministrativeArea>
+  </CityResult>
 </ArrayOfCityResult>

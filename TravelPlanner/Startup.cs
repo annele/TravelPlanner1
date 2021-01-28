@@ -29,10 +29,10 @@ namespace TravelPlanner
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherResultService>();
-            services.AddSingleton<CafeResultService>();
-            services.AddSingleton<LocationInformationService>();
-            services.AddSingleton<CityResultService>();
+            services.AddScoped<WeatherResultService>();
+            services.AddScoped<CafeResultService>();
+            services.AddScoped<LocationInformationService>();
+            services.AddScoped<CityResultService>();
             
             services.AddDbContext<SqlDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("SqlDbContext")));
